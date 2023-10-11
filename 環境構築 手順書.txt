@@ -1,0 +1,23 @@
+1.環境
+  Ruby 3.2.2
+  Rails ~>7.0.0
+  PostgreSQL
+
+2.手順
+  2-1 rails newを実行する
+  docker-compose run --no-deps web rails new . --force --database=postgresql --skip-bundle
+
+  2-2 docker-compose build を実行する
+  docker-compose build
+
+  2-3 dbのユーザー名とパスワードを指定
+  config/database.yml に以下を追加
+  host: db
+  username: <%= ENV["POSTGRES_USER"] %>
+  password: <%= ENV["POSTGRES_PASSWORD"] %>
+
+  2-4 dbの作成
+  docker-compose run --rm web rails db:create
+
+  2-5 コンテナの起動
+  docker-compose up -d
