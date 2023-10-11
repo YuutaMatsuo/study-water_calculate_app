@@ -1,1 +1,21 @@
 <h1>登山に必要な水の量を計算するアプリ</h1>
+
+<div class="button-container">
+  <%= link_to "計算する", new_calculate_path, class: "link-button" %>
+</div>
+
+<ul>
+  <% @calculates.each do |calc|%>
+  <li>
+    <h2><%= calc.weight %></h2>
+    <p><%= calc.activity_time %></p>
+    <span>
+      <small><%= calc.created_at %> </small>
+    </span>
+    <div class="edit-delete-wrapper">
+      <%= link_to "編集", edit_calculate_path(calc), class: "link-button" %>
+      <%= button_to "削除", calculate_path(calc), method: :delete, class: "link-delete-button" %>
+    </div>
+  </li>
+  <% end %>
+</ul>

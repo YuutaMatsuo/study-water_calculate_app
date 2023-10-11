@@ -1,0 +1,2 @@
+class Calclate < ApplicationRecord
+end
