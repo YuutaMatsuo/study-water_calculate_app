@@ -1,5 +1,5 @@
 class CalculatesController < ApplicationController
-  before_action :set_calculate, only: [:show, :edit, :update, :destroy]
+  before_action :set_calculate, only: [:show]
 
   def index
     @calculates = Calclate.all
@@ -11,33 +11,14 @@ class CalculatesController < ApplicationController
 
   def create
     @calculate = Calclate.new(calculate_params)
-    if @calculate.save
-      redirect_to calculate_path(@calculate)
-    else
-      render :new
-    end
+    @calculate_water_amount = @calculate.calculate_water_amount
+      render :show
   end
 
   def show
-    
   end
 
-  def edit
-  end
-
-  def update
-    if @calculate.update(calculate_params)
-      redirect_to calculates_path
-    else
-      render :edit
-    end
-  end
-
-  def destroy
-    @calculate.destroy
-    redirect_to calculates_path
-  end
-
+  #このクラスでしか使わないメソッドはprivate以下に記述する
   private
 
   def calculate_params

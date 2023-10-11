@@ -1,21 +1,11 @@
-<h1>登山に必要な水の量を計算するアプリ</h1>
-
-<div class="button-container">
-  <%= link_to "計算する", new_calculate_path, class: "link-button" %>
-</div>
+<h1>山に行くときの水の量</h1>
 
 <ul>
-  <% @calculates.each do |calc|%>
   <li>
-    <h2><%= calc.weight %></h2>
-    <p><%= calc.activity_time %></p>
-    <span>
-      <small><%= calc.created_at %> </small>
-    </span>
-    <div class="edit-delete-wrapper">
-      <%= link_to "編集", edit_calculate_path(calc), class: "link-button" %>
-      <%= button_to "削除", calculate_path(calc), method: :delete, class: "link-delete-button" %>
-    </div>
+    <h3>登山に行く際に必要な水の量を計算するアプリです！体重と活動時間を入力すると、必要な水の量を計算します</h3>
+    <small>登山・トレッキングを楽しむためには適度な水分補給が必要です。天候、気温、ルート、所要時間、自身の体型にもよりますが、必要な水分量（ml）は「体重（kg）×行動時間（休憩時間を含む登山・トレッキングの合計時間）×5（ml）×70～80%」と言われます。体重60kgの人が6時間行動すると必要な水分量はおおよそ1.2～1.8リットルです。ただ必要水分量についてはほかにも様々な考え方がありますので、あくまでもひとつの目安としてお考えください。</small>
   </li>
-  <% end %>
+    <div class="button-container">
+      <%= link_to "計算する", new_calculate_path, class: "link-button" %>
+    </div>
 </ul>
