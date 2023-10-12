@@ -10,7 +10,8 @@ class CalculatesController < ApplicationController
 
   def create
     @calculate = Calclate.new(calculate_params)
-    @calculate_water_amount = @calculate.calculate_water_amount
+    @water_amount = @calculate.calculate_water_amount
+    @bottles = @calculate.calculate_water_bottles
       render :show
   end
 
