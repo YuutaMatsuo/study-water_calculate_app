@@ -2,7 +2,6 @@ class CalculatesController < ApplicationController
   before_action :set_calculate, only: [:show]
 
   def index
-    @calculates = Calclate.all
   end
 
   def new
