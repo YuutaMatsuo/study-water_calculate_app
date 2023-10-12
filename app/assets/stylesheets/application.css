@@ -98,3 +98,49 @@ ul li p {
   display: flex;
   margin-top: 10px;
 }
+
+/* スマートフォン用のスタイル */
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 24px;
+  }
+  p {
+    font-size: 16px;
+  }
+  ul {
+    margin: 0;
+  }
+  .button-container {
+    text-align: center;
+  }
+}
+
+/* タブレット用のスタイル */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  h1 {
+    font-size: 36px;
+  }
+  p {
+    font-size: 20px;
+  }
+  ul {
+    margin: 5%;
+  }
+  .button-container {
+    text-align: center;
+  }
+}
+
+/* デスクトップ用のスタイル */
+@media screen and (min-width: 769px) {
+  h1 {
+    font-size: 40px;
+  }
+  p {
+    font-size: 20px;
+    text-align: center;
+  }
+  .button-container {
+    text-align: center;
+  }
+}
