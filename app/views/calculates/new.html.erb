@@ -1,15 +1,26 @@
 <h1>体重と活動時間を入力してください</h1>
 
 <%= form_with model: @calculate, url: calculates_path, html: {class: "form-container"}, validate: true do |form| %>
+
   <div class="form-input">
-  <%= form.label :"体重(Kg)" %><%= form.number_field :weight, in: 1..200, step: 1 %>
+    <%= form.label :"体重(Kg)" %><%= form.number_field :weight, in: 1..200, step: 1, required: true %>
   </div>
   <div class="form-input">
-  <%= form.label :"活動時間(h)" %><%= form.number_field :activity_time, in: 1..24, step: 1 %>
+    <%= form.label :"活動時間(h)" %><%= form.number_field :activity_time, in: 1..24, step: 1, required: true %>
   </div>
   <div class="button-container">
-  <%= form.submit "計算" , class: "link-button" %>
-  <%= link_to "戻る", calculates_path, class: "link-button" %>
+    <%= form.submit "計算", class: "form-button", disabled: true %>
+    <%= link_to "戻る", calculates_path, class: "form-button" %>
   </div>
-  
 <% end %>
+
+<script>
+  const form = document.querySelector('form');
+  const submitButton = form.querySelector('input[type="submit"]');
+
+  form.addEventListener('input', () => {
+    const inputs = Array.from(form.elements).filter(input => input.tagName === 'INPUT' && input.required);
+    const isFormValid = inputs.every(input => input.checkValidity());
+    submitButton.disabled = !isFormValid;
+  });
+</script>

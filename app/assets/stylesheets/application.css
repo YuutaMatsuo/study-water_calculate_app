@@ -15,6 +15,10 @@ h1 {
   padding: 20px 0;
 }
 
+h2 {
+  text-align: center;
+}
+
 ul {
   list-style: none;
   padding: 0;
@@ -69,17 +73,6 @@ ul li p {
   border-radius: 5px;
 }
 
-.link-button {
-  display: inline-block;
-  background-color: #007bff;
-  color: #fff;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 5px;
-  text-align: center;
-  cursor: pointer;
-}
-
 .link-delete-button {
   display: inline-block;
   background-color: #cc361f;
@@ -99,6 +92,24 @@ ul li p {
   margin-top: 10px;
 }
 
+.form-button {
+  display: inline-block;
+  padding: 10px 20px;
+  text-decoration: none;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.form-button:hover {
+  background-color: #0062cc;
+  text-decoration: none;
+}
+
 /* スマートフォン用のスタイル */
 @media screen and (max-width: 480px) {
   h1 {
@@ -108,7 +119,7 @@ ul li p {
     font-size: 16px;
   }
   ul {
-    margin: 0;
+    margin: 5%;
   }
   .button-container {
     text-align: center;
