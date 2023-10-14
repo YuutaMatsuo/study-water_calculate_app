@@ -67,7 +67,6 @@ ul li p {
 .form-input {
   margin-bottom: 20px;
   width: 100%;
-  font-size: 17px;
 }
 
 .form-input input,
@@ -132,6 +131,9 @@ ul li p {
   .button-container {
     text-align: center;
   }
+  input[type="number"] {
+    font-size: 16px;
+  }
 }
 
 /* タブレット用のスタイル */
@@ -147,6 +149,9 @@ ul li p {
   }
   .button-container {
     text-align: center;
+  }
+  input[type="number"] {
+    font-size: 16px;
   }
 }
 
