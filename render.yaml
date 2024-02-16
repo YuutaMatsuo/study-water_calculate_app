@@ -1,6 +1,6 @@
 databases:
   - name: water_calculate_app_DB
-    databaseName: water_calculate_app
+    databaseName: water_calculate_app_qd08
     user: water_calculate
     region: singapore
 
